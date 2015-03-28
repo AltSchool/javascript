@@ -665,15 +665,17 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
 
 ## Comments
 
-  - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
+  - Use `//` for multiline comments. Include a description, specify types and values for all parameters and return values.
 
     ```javascript
     // bad
-    // make() returns a new element
-    // based on the passed in tag name
-    //
-    // @param {String} tag
-    // @return {Element} element
+    /**
+     * make() returns a new element
+     * based on the passed in tag name
+     *
+     * @param {String} tag
+     * @return {Element} element
+     */
     function make(tag) {
 
       // ...stuff...
@@ -682,13 +684,11 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
     }
 
     // good
-    /**
-     * make() returns a new element
-     * based on the passed in tag name
-     *
-     * @param {String} tag
-     * @return {Element} element
-     */
+    // make() returns a new element
+    // based on the passed in tag name
+    //
+    // @param {String} tag
+    // @return {Element} element
     function make(tag) {
 
       // ...stuff...

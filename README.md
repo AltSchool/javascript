@@ -31,6 +31,7 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
   1. [jQuery](#jquery)
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. [ECMAScript 6](#ecmascript-6)
+    1. [Fat Arrows](#fat-arrows)
   1. [Testing](#testing)
   1. [Performance](#performance)
   1. [Resources](#resources)
@@ -1511,7 +1512,30 @@ Comming soon...
 
 ## ECMAScript 6
 
-Coming soon...
+### Fat Arrows
+
+Use when defining inline function iterators and callbacks, especially when needing to preserve `this`. Don’t use as general replacement for `function`.
+
+```javascript
+// bad
+var self = this;
+person.save().then(function() {
+  self.send('flash-message', 'Saved!');
+});
+
+// bad
+person.save().then(function() {
+  self.send('flash-message', 'Saved!');
+}.bind(this));
+
+// good
+var names = people.map((person) => { return person.name; });
+
+// good
+person.save().then(()=> {
+  this.send('flash-message', 'Saved!');
+});
+```
 
 **[⬆ back to top](#table-of-contents)**
 

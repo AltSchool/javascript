@@ -34,6 +34,7 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
     1. [Fat Arrows](#fat-arrows)
     1. [Classes](#classes)
     1. [Enhanced Object Literals](#enhanced-object-literals)
+    1. [Template Strings](#template-strings)
   1. [Testing](#testing)
   1. [Performance](#performance)
   1. [Resources](#resources)
@@ -1557,6 +1558,20 @@ export default Ember.Route.extend({
   }
 });
 ```
+
+### Template Strings
+
+Use with aplomb!
+
+```javascript
+// bad
+return 'Hi my name is ' + name + ' and my favorite color is ' + color;
+
+// good
+return `Hi my name is ${name} and my favorite color is ${color}`;
+```
+
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Testing

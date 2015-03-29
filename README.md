@@ -33,6 +33,7 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
   1. [ECMAScript 6](#ecmascript-6)
     1. [Fat Arrows](#fat-arrows)
     1. [Classes](#classes)
+    1. [Enhanced Object Literals](#enhanced-object-literals)
   1. [Testing](#testing)
   1. [Performance](#performance)
   1. [Resources](#resources)
@@ -1542,6 +1543,20 @@ person.save().then(()=> {
 
 Class syntax looks great and works well with Ember. However, don’t use it yet. The style isn’t Ember idiomatic. Usage outside of Ember may be appropriate in certain circumstances.
 
+### Enhanced Object Literals
+
+For the most part these should be avoided, except for the case of actions objects in Ember object definitions where the method shorthand syntax can help with readability.
+
+```javascript
+// good
+export default Ember.Route.extend({
+  actions: {
+    save() {
+      this.model.save();
+    }
+  }
+});
+```
 **[⬆ back to top](#table-of-contents)**
 
 ## Testing

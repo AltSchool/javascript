@@ -32,6 +32,7 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. [ECMAScript 6](#ecmascript-6)
     1. [Fat Arrows](#fat-arrows)
+    1. [Classes](#classes)
   1. [Testing](#testing)
   1. [Performance](#performance)
   1. [Resources](#resources)
@@ -1536,6 +1537,10 @@ person.save().then(()=> {
   this.send('flash-message', 'Saved!');
 });
 ```
+
+### Classes
+
+Class syntax looks great and works well with Ember. However, don’t use it yet. The style isn’t Ember idiomatic. Usage outside of Ember may be appropriate in certain circumstances.
 
 **[⬆ back to top](#table-of-contents)**
 

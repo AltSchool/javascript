@@ -35,6 +35,7 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
     1. [Classes](#classes)
     1. [Enhanced Object Literals](#enhanced-object-literals)
     1. [Template Strings](#template-strings)
+    1. [Destructuring](#destructuring)
   1. [Testing](#testing)
   1. [Performance](#performance)
   1. [Resources](#resources)
@@ -1571,6 +1572,24 @@ return 'Hi my name is ' + name + ' and my favorite color is ' + color;
 return `Hi my name is ${name} and my favorite color is ${color}`;
 ```
 
+### Destructuring
+
+You should use destructuring with only a few caveats. Avoid complex destructuring, especially in function parameters. Also, know that jsHint is currently incompatible with this syntax so you'll need to surround code that uses it in `/* jshint ignore:start */` and `
+/* jshint ignore:end */`
+
+```javascript
+// bad
+function getName(person) {
+  return person && person.name;
+}
+
+// good
+function getName({ name: name }) {
+  return name;
+}
+```
+
+See more examples [here](https://github.com/AltSchool/ember-cli-es6-testing/blob/master/tests/unit/destructuring-test.js)
 
 **[⬆ back to top](#table-of-contents)**
 

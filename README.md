@@ -1440,6 +1440,16 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
 
 ## Ember
 
+  - In calls to `Ember.*.extend`, leave a blank lines after any mixins, before properties:
+  ```javascript
+  export default Ember.ArrayController.extend(
+    SingleCellSelection,
+    AdjacentCellFinder, {
+
+  	someProperty: true
+  });
+  ```
+
   - If you use `Ember.computed`, be sure that you define all the property dependencies through the parameters to that method:
 
   ```javascript
@@ -1452,10 +1462,10 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
   - Reusable components should not use the prototype extensions API. Instead, use `Ember.computed`:
   ```javascript
      // bad
-     nowish: function () { return new Date().toString(); }.property();
+     nowish: function () { return new Date().toString(); }.property(),
 
      // good
-	nowish: Ember.computed( function() { return new Date().toString(); } );
+	nowish: Ember.computed( function() { return new Date().toString(); }),
   ```
 
 More coming soon...

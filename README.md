@@ -1440,7 +1440,25 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
 
 ## Ember
 
-Comming soon...
+  - If you use `Ember.computed`, be sure that you define all the property dependencies through the parameters to that method:
+
+  ```javascript
+    // good
+	description: Ember.computed('fullName', 'homePlanet', function () {
+  	 return `${this.get('fullName')} from ${this.get('homePlanet')}`; 
+    })
+  ```
+  
+  - Reusable components should not use the prototype extensions API. Instead, use `Ember.computed`:
+  ```javascript
+     // bad
+     nowish: function () { return new Date().toString(); }.property();
+
+     // good
+	nowish: Ember.computed( function() { return new Date().toString(); } );
+  ```
+
+More coming soon...
 
 **[⬆ back to top](#table-of-contents)**
 

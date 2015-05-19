@@ -1468,6 +1468,22 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
 	nowish: Ember.computed( function() { return new Date().toString(); }),
   ```
 
+  - Align calls to `DS.attr` in models: 
+  ```javascript
+     // bad
+    export default DS.Model.extend({
+      favoriteColor: DS.attr('string'),
+      favoriteFlavor: DS.attr('string'),
+      age: DS.attr('number'),
+
+     // good
+     export default DS.Model.extend({
+      favoriteColor:    DS.attr('string'),
+      favoriteFlavor:   DS.attr('string'),
+      age:              DS.attr('number'),
+  
+  ```
+
 More coming soon...
 
 **[⬆ back to top](#table-of-contents)**

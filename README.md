@@ -1577,7 +1577,7 @@ person.save().then(function() {
 }.bind(this));
 
 // good
-var names = people.map((person) => { return person.name; });
+var names = people.map((person) => person.name);
 
 // good
 person.save().then(()=> {

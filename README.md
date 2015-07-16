@@ -27,6 +27,7 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
   1. [Constructors](#constructors)
   1. [Events](#events)
   1. [Modules](#modules)
+  1. [Imports](#imports)
   1. [Ember](#ember)
   1. [jQuery](#jquery)
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
@@ -1435,6 +1436,39 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
     }(this);
     ```
 
+**[⬆ back to top](#table-of-contents)**
+
+## Imports
+
+  - Always use ES6-style `import`. Never use `require`.
+
+  ```javascript
+  import Foo from '/path/to/foo/'; // good
+  var Foo = require('/path/to/foo'); // bad
+  ```
+  
+  - Group imports into at most three groups: 
+     1. ember imports 
+     1. other library imports 
+     1. imports from this application. 
+
+  - Within each group, sort by alphabetical order, case-insensitive, of the name you're assigning to the thing being imported. 
+  - If you're importing multiple things, put those into alphabetical order, and sort by the name of the first thing you're importing. 
+  - Put newlines between the three groups of imports.
+  - Put the ember import before the ember-data import, even though `DS` is before `Ember` in alphabetical order. 
+    
+  For example:   
+  ```javascript
+  import Ember from 'ember';
+  import DS from 'ember-data';
+  
+  import { afterEach, beforeEach } from 'mocha';
+  import markdown from 'markdown';
+  
+  import AloCompetency from 'vishnu/models/alo-competency';
+  import DomainGroup from 'vishnu/models/domain-group';  
+  ```
+  
 **[⬆ back to top](#table-of-contents)**
 
 

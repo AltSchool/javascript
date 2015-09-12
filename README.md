@@ -1453,7 +1453,7 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
      1. imports from this application. 
 
   - Within each group, sort by alphabetical order, case-insensitive, of the name you're assigning to the thing being imported. 
-  - If you're importing multiple things, put those into alphabetical order, and sort by the name of the first thing you're importing. 
+  - If you're importing multiple things, put those into alphabetical order, after any single imports, by the name of the first thing being importing.
   - Put newlines between the three groups of imports.
   - Put the ember import before the ember-data import, even though `DS` is before `Ember` in alphabetical order. 
     
@@ -1462,8 +1462,8 @@ Forked from [Airbnb's Style Guide](https://github.com/airbnb/javascript).
   import Ember from 'ember';
   import DS from 'ember-data';
   
-  import { afterEach, beforeEach } from 'mocha';
   import markdown from 'markdown';
+  import { afterEach, beforeEach } from 'mocha';
   
   import AloCompetency from 'vishnu/models/alo-competency';
   import DomainGroup from 'vishnu/models/domain-group';  
